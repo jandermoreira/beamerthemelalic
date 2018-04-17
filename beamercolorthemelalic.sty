@@ -1,0 +1,50 @@
+%
+% Tema para beamer: LALIC
+% Por Jander Moreira, 2018
+%
+% Color theme
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definições de cores
+%
+\RequirePackage{xcolor}
+
+% Cores dos gráficos
+\definecolor{lalicbackground}{rgb}{1, 1, 1} % branco
+%\definecolor{lalicbackground}{rgb}{0.8, 0.8, 0.9} 
+\definecolor{lalictitlebackground}{rgb}{0.1, 0.1, 0.5} % azul escuro
+\definecolor{lalicline}{rgb}{0.1, 0.1, 0.4} % azul muito escuro
+
+% Cores das fontes
+\definecolor{lalicfonttitle}{rgb}{1, 1, 1} % branco
+\definecolor{lalicfontsubtitle}{rgb}{1, 1, 1} % branco
+\definecolor{lalicfontauthor}{rgb}{0, 0, 0} % preto
+\definecolor{lalicfontdate}{rgb}{0, 0, 0} % preto
+\definecolor{lalicfonttext}{rgb}{0, 0, 0} % preto
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ajustes de cores nos elementos
+%
+
+\mode<presentation>
+
+\setbeamercolor*{background canvas}{bg = white}
+\setbeamercolor*{normal text}{fg = black}
+\setbeamercolor*{title page header}{fg = white}
+\setbeamercolor*{subtitle page header}{fg = white}
+\setbeamercolor*{author}{fg = black}
+\setbeamercolor*{date}{fg = lalicfontdate}
+\setbeamercolor*{note page}{bg=white, fg=black}
+\setbeamercolor*{title text}{fg = white}
+
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block title}{fg = white, bg = blue!50!black}
+\setbeamercolor{block body}{fg = black, bg = blue!30!black!10}
+\setbeamercolor{block title example}{fg = white, bg = blue!50!green}
+\setbeamercolor{block body example}{fg=black,bg=blue!30!green!10}
+\setbeamercolor{block title alerted}{fg = white, bg = blue!20!red}
+\setbeamercolor{block body alerted}{fg=black,bg=blue!30!red!10}
+
+
+\mode<all>

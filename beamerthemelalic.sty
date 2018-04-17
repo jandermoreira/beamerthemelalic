@@ -1,0 +1,67 @@
+%
+% Tema para beamer: LALIC
+%
+% Por Jander Moreira, 2018
+
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configurações
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usecolortheme{lalic}
+\usefonttheme{lalic}
+\useinnertheme{lalic}
+\useoutertheme{lalic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aspectos visuais
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{navigation symbols}{} % sem navegação
+\makeatletter
+\protect\beamer@compresstrue
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aspectos configuráveis
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Comando para e-mail
+\def\lalicemail{use \textbackslash email\{\} para definir e-mail} % email
+\newcommand{\email}[1]{\def\lalicemail{#1}}
+
+% Comando para data da apresentação
+\newcommand{\dataapresentacao}[3]{
+	\day=#1\relax%
+	\month=#2\relax%
+	\year=#3\relax%	
+}
+
+% Geração tabela de conteúdo
+\RequirePackage{calculator}
+\newcommand{\agendaautomatica}[1][]{
+	\AtBeginSection[]{
+		\def\temp{#1}
+		\ifx\temp\empty{%
+				\begin{frame}
+					\tableofcontents[currentsection, hideallsubsections]
+				\end{frame}
+		}
+		\else{
+			\ADD{#1}{1}{\segundacoluna}
+				\begin{frame}
+					\begin{columns}[t]
+						\begin{column}{0.5\linewidth}
+							\tableofcontents[currentsection, hideallsubsections,
+								sections={1-#1}]
+						\end{column}
+						\begin{column}{0.5\linewidth}
+							\tableofcontents[currentsection, hideallsubsections,
+								sections={\segundacoluna-}]
+						\end{column}
+					\end{columns}
+				\end{frame}
+		}
+		\fi
+	}
+}
+%\mode<all>

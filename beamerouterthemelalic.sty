@@ -1,0 +1,78 @@
+%
+% Tema para beamer: LALIC
+% Por Jander Moreira, 2018
+%
+% Outer theme (definição do espaço fora do conteúdo: cabeçalhos, rodapés)
+
+\mode<presentation>
+
+\RequirePackage{tikz}
+\usetikzlibrary{positioning, calc, shapes.misc, math}
+
+\defbeamertemplate*{frametitle}{lalic}[1][]
+{
+    \begin{beamercolorbox}[wd=\paperwidth, ht=2cm]{frametitle}
+		\begin{tikzpicture}[
+				faixa do titulo/.style = {
+					fill = lalictitlebackground,
+					rounded rectangle,
+					rounded rectangle west arc = 20, 
+					rounded rectangle west arc = none, 
+					minimum height = 2.5em,
+					minimum width = 0.995\paperwidth,
+					anchor = south west,
+				},
+				fonte titulo/.style = {
+					text = lalicfonttitle,
+					anchor = west, 
+					font = \Large\bfseries,
+				},
+				fonte subtitulo/.style = {
+					text = lalicfonttitle,
+					anchor = west, 
+					font = \normalsize,
+				},
+			]
+			    \useasboundingbox(0, 0) rectangle(\the\paperwidth, \the\paperheight);
+			    
+				\node (barra) [faixa do titulo] at (0, 0) {};%
+				
+				\ifx\insertframesubtitle\@empty{%
+					\draw[line width = 3pt, draw = lalicbackground]%
+						($(barra.south west) + (0, 0.5em)$) -- ($(barra.south east) + (0, 0.5em)$);
+					\node[fonte titulo] at ($(barra.west) + (0, 0.1em)$) {\insertframetitle};
+				}
+				\else{%
+					\draw[line width = 2.5pt, draw = lalicbackground]%
+						($(barra.west) - (0, 0.15em)$)%
+						-- ($(barra.east) - (0.1\textwidth, 0.15em)$);
+					\node[fonte titulo]%
+						at ($(barra.north west) - (0, 0.65em)$) {\insertframetitle};
+					\node[fonte subtitulo]%
+						at ($(barra.south west) + (0, 0.5em)$) %
+						{$\triangleright$\hspace{0.2em}\insertframesubtitle};
+				}
+				\fi
+		\end{tikzpicture}
+    \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{%
+	\begin{beamercolorbox}[center]{}
+		\ifnum\thepage>1\relax%
+			\pgfmathsetmacro\progresso{\insertframenumber/\inserttotalframenumber}
+			\begin{tikzpicture}
+				\draw[dotted] (0, 0) -- (\linewidth, 0);
+				\draw[thick] (0, 0) -- (\progresso*\linewidth, 0);
+				%\draw[draw, fill=white] (\progresso*\linewidth, 0) circle (0.7mm);
+				\node[draw, rounded corners, fill = white] at (\progresso*\linewidth, 0) {\insertframenumber};
+			\end{tikzpicture}
+			\vskip3pt
+			\insertnavigation{0.98\linewidth}
+		\fi
+		\vskip01cm
+	\end{beamercolorbox}
+}
+
+
+\mode<all>
