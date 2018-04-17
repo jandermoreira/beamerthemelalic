@@ -1,0 +1,192 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Documento exemplo para uso do tema do LALIC no Beamer
+%  Jander, 2018
+%
+\documentclass[
+	brazilian, % idioma
+	12pt, % pode ser 10pt, 11pt, 12pt...
+	%aspectratio = 169, % 16x9 = widescreen
+]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Tema: LALIC
+\usetheme{lalic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Agenda no inicio de cada seção (remova comentário de uma das opções)
+%
+\agendaautomatica		% agenda em uma coluna
+%\agendaautomatica[4]	% agenda em duas colunas, quebrando na seção indicada
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Opção para geração de eslaides com notas
+% O programa pympress consegue mostrar os eslaides no projetor e as notas na tela
+%
+%\usepackage{pgfpages}
+%\setbeameroption{show notes on second screen=right}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Documentação
+\title{Título da apresentação}
+\author{Fulano de Tal}
+\email{fulano@de.tal} %  LALIC; use \email{} para omitir
+\dataapresentacao{25}{12}{2027} %  LALIC; argumentos: dia, mês e ano (numéricos)
+\date{\today} % \date{} sumprime a data
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conteúdo
+%
+\begin{document}
+\begin{frame}
+	\titlepage	
+\end{frame}
+
+% Opcionalmente, comente este frame caso use \agendaautomatica
+\begin{frame}{Agenda}
+	\tableofcontents
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Seções, subseções...
+% > texto normal: nome usado na \tableofcontents
+% > texto curto (opcional): nome usado na navegação
+%
+% \section[texto curto]{texto normal} cria uma seção
+% \subsection[texto curto]{texto normal} cria uma subseção
+
+\section{Introdução e motivação}
+\begin{frame}
+	Eslaide sem título
+\end{frame}
+
+\begin{frame}{Introdução}
+	Eslaide com título
+\end{frame}
+
+\begin{frame}{Introdução}{Motivação}
+	Eslaide com título e subtítulo
+\end{frame}
+
+
+\section[Recursos]{Recursos de apresentação}
+
+\subsection{Listas}
+
+\begin{frame}{Listas}{Listas sem numeração}
+	Lista sem numeração
+	
+	\begin{itemize}
+		\item Um one eins
+		\item Dois two zwei
+		\item Três three drei
+			\begin{itemize}
+				\item Três ponto um
+				\item Três ponto dois
+			\end{itemize}
+		\item Quatro four vier
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Listas}{Listas com numeração}
+	Lista com numeração
+	
+	\begin{enumerate}
+		\item Um one eins
+		\item Dois two zwei
+		\item Três three drei
+			\begin{itemize}
+				\item Três ponto um
+				\item Três ponto dois
+			\end{itemize}
+		\item Quatro four vier
+	\end{enumerate}
+\end{frame}
+
+\subsection{Duas colunas}
+
+\begin{frame}
+	Texto em duas colunas (tamanhos diferentes\ldots)
+	
+	\begin{columns}
+		\begin{column}{0.4\linewidth}
+			Dewar's scotch whisky gin sour lime rickey balvenie satan's whiskers cheeky vimto ben nevis, sangría. Bunnahabhain the goldeneye redline vodka sundowner aviation, hurricane speyburn, glen ord.
+		\end{column}
+		\begin{column}{0.6\linewidth}
+			 Sake screwdriver; mojito bloody aztec old mr. boston belvedere knockeen hills irish poteen. Myers gin sour anisette moonwalk glen garioch vodka sunrise glen spey cragganmore fleischmann's inchgower gordon's, "fleischmann's miltonduff." 
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{Blocos}
+
+\begin{frame}{Blocos}
+	\begin{block}{Bloco}
+		Tobermory bull shot wild turkey early times strega lynchburg lemonade haig \& haig "pinch" ruby dutchess. 
+	\end{block}
+
+	\begin{definition}
+		Kentucky tavern manhattan sazerac glenfiddich kalimotxo smoky martini grant's.
+	\end{definition}
+
+\end{frame}
+
+\begin{frame}{Mais blocos}
+	\begin{alertblock}{Bloco de alerta}
+		Kalimotxo critty bo glen moray mint julep jungle juice old crow mimosa early times tom and jerry. 
+	\end{alertblock}
+		
+	\begin{exampleblock}{Bloco de exemplo}
+		Ron rico batida speyburn, harper's colombia canadian club.
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Blocos padrões da matemática}
+	\begin{theorem}
+		$ a^2 = b^2 + c^2 $
+	\end{theorem}
+	
+	\begin{corollary}
+		$\Delta = b^2 - 4ac$
+	\end{corollary}
+	
+	\begin{proof}
+		$\dfrac{\pi}{4} = 1 - \dfrac{1}{3} + \dfrac{1}{5} - \dfrac{1}{7} -\ldots$
+	\end{proof}
+\end{frame}
+
+\subsection{Figuras}
+
+\begin{frame}{Figuras}
+	\begin{columns}
+		\begin{column}{0.5\linewidth}
+			\includegraphics[width=\linewidth]{logo_ufscar}
+		\end{column}
+		\begin{column}{0.5\linewidth}
+			\includegraphics[width=\linewidth]{logo_nilc}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\section{Conclusões}
+\begin{frame}
+	\centering
+	\textit{That's all folks!}
+	
+	\pause
+	\alert{Questões?}
+\end{frame}
+
+
+\end{document}
