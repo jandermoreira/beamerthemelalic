@@ -13,6 +13,7 @@
 {
     \begin{beamercolorbox}[wd=\paperwidth, ht=2cm]{frametitle}
 		\begin{tikzpicture}[
+				overlay, remember picture, 
 				faixa do titulo/.style = {
 					fill = lalictitlebackground,
 					rounded rectangle,
@@ -25,47 +26,57 @@
 				fonte titulo/.style = {
 					text = lalicfonttitle,
 					anchor = west, 
+					text depth = 0.25ex,
 					font = \Large\bfseries,
 				},
 				fonte subtitulo/.style = {
 					text = lalicfonttitle,
 					anchor = west, 
+					text depth = 0.25ex,
 					font = \normalsize,
 				},
 			]
-			    \useasboundingbox(0, 0) rectangle(\the\paperwidth, \the\paperheight);
+%			    \useasboundingbox(0, 0) rectangle (\the\paperwidth, \the\paperheight);
 			    
 				\node (barra) [faixa do titulo] at (0, 0) {};%
 				
 				\ifx\insertframesubtitle\@empty{%
-					\draw[line width = 3pt, draw = lalicbackground]%
-						($(barra.south west) + (0, 0.5em)$) -- ($(barra.south east) + (0, 0.5em)$);
+					\draw[line width = 3pt, line cap = round,
+						draw = lalicbackground]%
+						($(barra.south west) + (0, 0.5em)$) --
+							++(\textwidth, 0);
 					\node[fonte titulo] at ($(barra.west) + (0, 0.1em)$) {\insertframetitle};
 				}
 				\else{%
-					\draw[line width = 2.5pt, draw = lalicbackground]%
-						($(barra.west) - (0, 0.15em)$)%
-						-- ($(barra.east) - (0.1\textwidth, 0.15em)$);
+					\draw[line width = 2.5pt, line cap = round,
+						draw = lalicbackground]%
+						($(barra.west) - (0, 0.15em)$) --
+						++(\textwidth, 0);
 					\node[fonte titulo]%
-						at ($(barra.north west) - (0, 0.65em)$) {\insertframetitle};
+						at ($(barra.north west) - (0, 0.7em)$) {\insertframetitle};
 					\node[fonte subtitulo]%
 						at ($(barra.south west) + (0, 0.5em)$) %
-						{$\triangleright$\hspace{0.2em}\insertframesubtitle};
+						{\raisebox{0.25ex}{$\rhd$}%
+							\hspace{0.5em}\insertframesubtitle};
 				}
 				\fi
 		\end{tikzpicture}
     \end{beamercolorbox}
 }
 
+\newlength{\progressbar}
+\setlength{\progressbar}{1.1\linewidth}
 \setbeamertemplate{footline}{%
 	\begin{beamercolorbox}[center]{}
 		\ifnum\thepage>1\relax%
-			\pgfmathsetmacro\progresso{\insertframenumber/\inserttotalframenumber}
-			\begin{tikzpicture}
-				\draw[dotted] (0, 0) -- (\linewidth, 0);
-				\draw[thick] (0, 0) -- (\progresso*\linewidth, 0);
-				%\draw[draw, fill=white] (\progresso*\linewidth, 0) circle (0.7mm);
-				\node[draw, rounded corners, fill = white] at (\progresso*\linewidth, 0) {\insertframenumber};
+			\begin{tikzpicture}%[overlay, remember picture]
+				\pgfmathparse{\insertframenumber/\inserttotalframenumber}
+				\coordinate (progresso)
+					at (\pgfmathresult * \progressbar, 0);
+				\draw[thick] (0, 0) -- (progresso);
+				\draw[dotted] (progresso) --(\progressbar, 0);
+				\node[fill = white, rounded corners, draw, anchor = east]
+					at (progresso) {\insertframenumber};
 			\end{tikzpicture}
 			\vskip3pt
 			\insertnavigation{0.98\linewidth}

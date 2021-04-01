@@ -49,50 +49,48 @@
 				fonte titulo/.style = {
 					text = lalicfonttitle,
 					anchor = west, 
+					inner sep = 3pt,
 					%font = \Large\bfseries,
 				},
 				fonte subtitulo/.style = {
 					text = lalicfonttitle,
 					anchor = west, 
+					text depth = 0.25ex,
+					inner sep = 3pt,
 					font = \small,
 				},
 			]
 				\node (barra) [faixa do titulo, align = left] at (0, 0) {};
 				\node[fonte titulo] at ($(barra.north west) + (0.2cm, -0.55cm)$)%
-					{\fontsize{28pt}{20pt}\selectfont\bfseries LALIC};
-				\draw[line width = 2pt, draw = lalicbackground]%
-						($(barra.west) - (0, 0.26cm)$) -- ($(barra.east) - (0.1\textwidth, 0.26cm)$);
+					{\Huge\bfseries LALIC};
+				\draw[line width = 2.2pt, draw = lalicbackground,	
+					line cap = round]%
+					($(barra.west) - (0, 0.26cm)$) --
+						++(\textwidth, 0);
 				\node[fonte subtitulo] at ($(barra.south west) + (0.3cm, 0.3cm)$)%
-					{\fontsize{12pt}{12pt}\selectfont Laboratório de Linguística e Inteligência Computacional};
+					{\large Laboratório de Linguística e Inteligência Computacional};
 		\end{tikzpicture}
 	\end{beamercolorbox}
 	
-	\begin{beamercolorbox}[ht = 2.2cm, center]{title box}
-		\fontsize{20}{22}\selectfont
-		\inserttitle
+	\begin{beamercolorbox}[ht = 2.5cm, center]{title box}
+		\LARGE\inserttitle
 	\end{beamercolorbox}				
 		
-	\vspace{0.3cm}
+	\vspace{0.2cm}
 	\begin{beamercolorbox}[ht = 1.2cm, center]{title box}
-		\fontsize{16}{17}\selectfont
-		\insertauthor\\
-		\fontsize{14}{14}\selectfont
+		{\large\insertauthor}\\
 		\texttt{\lalicemail}
-	\end{beamercolorbox}				
 		
-		
-	\vspace{0.3cm}
-	\begin{beamercolorbox}[ht = 0.6cm, center]{title box}
-		\fontsize{13}{13}\selectfont\itshape
-		\insertdate
+		\vspace{0.1cm}
+		\small\textit{\insertdate}
 	\end{beamercolorbox}				
 
-%	\vspace{0.4cm}
-	\begin{beamercolorbox}[ht = 1.5cm]{section in head/foot}
-		\includegraphics[height=1.7cm]{logo_ufscar}
-		\hfill
-		\includegraphics[height=1.5cm]{logo_nilc}
-	\end{beamercolorbox}		
+%	\vspace{0.35cm}
+%	\begin{beamercolorbox}[ht = 1.5cm, center]{title box}
+		\includegraphics[height=1.8cm]{logo_ufscar}%
+		\hfill%
+		\includegraphics[height=1.2cm]{logo_nilc}%
+%	\end{beamercolorbox}		
 }
 
 
