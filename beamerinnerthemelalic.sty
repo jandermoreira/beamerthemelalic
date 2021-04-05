@@ -1,6 +1,9 @@
 %
 % Tema para beamer: LALIC
-% Por Jander Moreira, 2018/2022
+%
+% Por Jander Moreira, 2018-2021
+%
+% Versão 1.0
 %
 % Inner theme (definição do espaço de conteúdo)
 
@@ -68,7 +71,7 @@
 					($(barra.west) - (0, 0.26cm)$) --
 						++(\textwidth, 0);
 				\node[fonte subtitulo] at ($(barra.south west) + (0.3cm, 0.3cm)$)%
-					{\large Laboratório de Linguística e Inteligência Computacional};
+					{Laboratório de Linguística e Inteligência Computacional};
 		\end{tikzpicture}
 	\end{beamercolorbox}
 	
@@ -76,21 +79,18 @@
 		\LARGE\inserttitle
 	\end{beamercolorbox}				
 		
-	\vspace{0.2cm}
-	\begin{beamercolorbox}[ht = 1.2cm, center]{title box}
-		{\large\insertauthor}\\
-		\texttt{\lalicemail}
+	\vspace{0.5cm}
+	\begin{beamercolorbox}[ht = 2.5cm, center]{title box}
+		{\Large\insertauthor}\\
+		\small\texttt{\lalicemail}
 		
-		\vspace{0.1cm}
-		\small\textit{\insertdate}
+		\vspace{0.3cm}
+		\textit{\insertdate}
 	\end{beamercolorbox}				
 
-%	\vspace{0.35cm}
-%	\begin{beamercolorbox}[ht = 1.5cm, center]{title box}
-		\includegraphics[height=1.8cm]{logo_ufscar}%
-		\hfill%
-		\includegraphics[height=1.2cm]{logo_nilc}%
-%	\end{beamercolorbox}		
+%	\includegraphics[height=1.8cm]{logo_ufscar}%
+%	\hfill%
+%	\includegraphics[height=1.2cm]{logo_nilc}%
 }
 
 
