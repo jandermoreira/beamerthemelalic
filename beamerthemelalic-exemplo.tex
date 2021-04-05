@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Documento exemplo para uso do tema do LALIC no Beamer
+%  Jander, 2018
+%
+\documentclass[
+	brazilian, % idioma
+	12pt, % pode ser 10pt, 11pt, 12pt...
+%	aspectratio = 169, % 16x9 = widescreen
+]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% Tema: LALIC
+\usetheme{lalic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Agenda no inicio de cada seção (remova comentário de uma das opções)
+%
+%\agendaautomatica	% agenda em uma coluna
+%\agendaautomatica[4]	% agenda em duas colunas, quebrando na seção indicada
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Opção para geração de eslaides com notas
+% O programa pympress consegue mostrar os eslaides no projetor e as notas na tela
+%
+%\usepackage{pgfpages}
+%\setbeameroption{show notes on second screen=right}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Documentação
+\title{Sobre o tema do LALIC}
+\author{Jander Moreira}
+\email{jander@ufscar.br} %  LALIC; use \email{} para omitir
+\dataapresentacao{5}{4}{2021} %  LALIC; argumentos: dia, mês e ano (numéricos)
+\date{\today} % \date{} sumprime a data
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conteúdo
+%
+\begin{document}
+\begin{frame}
+	\titlepage	
+\end{frame}
+
+% Opcionalmente, comente este frame caso use \agendaautomatica
+\begin{frame}{Agenda}
+	\tableofcontents
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Seções, subseções...
+% > texto normal: nome usado na \tableofcontents
+% > texto curto (opcional): nome usado na navegação
+%
+% \section[texto curto]{texto normal} cria uma seção
+% \subsection[texto curto]{texto normal} cria uma subseção
+
+\section{Introdução e motivação}
+\begin{frame}{Introdução}
+	Este tema foi feito para uso em apresentações do LALIC.
+	
+	\vspace{2em}
+	Para uso, inclua no preâmbulo:
+	
+	\centering\texttt{\textbackslash usetheme\{lalic\}}
+\end{frame}
+
+\begin{frame}
+	Eslaide sem o título
+\end{frame}
+
+\begin{frame}{Introdução}
+	Eslaide somente com o título principal.
+\end{frame}
+
+
+\begin{frame}{Introdução}{Motivação}
+	Eslaide com título e subtítulo
+\end{frame}
+
+
+\section[Recursos]{Recursos de apresentação}
+
+\subsection{Listas}
+
+\begin{frame}{Listas}{Listas sem numeração}
+	Lista sem numeração
+	
+	\begin{itemize}
+		\item Um one eins
+		\item Dois two zwei
+		\item Três three drei
+			\begin{itemize}
+				\item Três ponto um
+				\item Três ponto dois
+			\end{itemize}
+		\item Quatro four vier
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Listas}{Listas com numeração}
+	Lista com numeração
+	
+	\begin{enumerate}
+		\item Um one eins
+		\item Dois two zwei
+		\item Três three drei
+			\begin{enumerate}
+				\item Três ponto um
+				\item Três ponto dois
+			\end{enumerate}
+		\item Quatro four vier
+	\end{enumerate}
+\end{frame}
+
+\subsection{Duas colunas}
+
+\begin{frame}{Duas colunas}
+	\begin{columns}[t]
+		\begin{column}{0.4\linewidth}
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		\end{column}
+		\begin{column}{0.6\linewidth}
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{Blocos}
+
+\begin{frame}{Blocos}
+	\begin{block}{Bloco}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	\end{block}
+
+	\begin{definition}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	\end{definition}
+
+\end{frame}
+
+\begin{frame}{Mais blocos}
+	\begin{alertblock}{Bloco de alerta}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	\end{alertblock}
+		
+	\begin{exampleblock}{Bloco de exemplo}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Blocos padrões da matemática}
+	\begin{theorem}
+		$ a^2 = b^2 + c^2 $
+	\end{theorem}
+	
+	\begin{corollary}
+		$\Delta = b^2 - 4ac$
+	\end{corollary}
+	
+	\begin{proof}
+		$\dfrac{\pi}{4} = 1 - \dfrac{1}{3} + \dfrac{1}{5} - \dfrac{1}{7} -\ldots$
+	\end{proof}
+\end{frame}
+
+\subsection{Figuras}
+
+\begin{frame}{Figuras}
+	\begin{columns}
+		\begin{column}{0.5\linewidth}
+			\includegraphics[width=\linewidth]{example-image-a}
+		\end{column}
+		\begin{column}{0.5\linewidth}
+			\includegraphics[width=\linewidth]{example-image-b}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\section{Conclusões}
+\begin{frame}{Questões?}
+	\centering
+	\textit{That's all folks!}
+\end{frame}
+
+
+\end{document}
