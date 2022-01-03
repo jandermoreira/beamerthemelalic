@@ -1,0 +1,8 @@
+\babel@toc {brazilian}{}
+\beamer@sectionintoc {1}{Introdução e motivação}{3}{0}{1}
+\beamer@sectionintoc {2}{Recursos de apresentação}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{Listas}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Duas colunas}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{Blocos}{10}{0}{2}
+\beamer@subsectionintoc {2}{4}{Figuras}{13}{0}{2}
+\beamer@sectionintoc {3}{Conclusões}{14}{0}{3}
